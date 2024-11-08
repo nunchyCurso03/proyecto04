@@ -1,5 +1,6 @@
 package es.santander.ascender.proyecto04;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -21,5 +22,15 @@ public class ArregloTest {
         }
 
         
+    }
+
+    @Test
+    public void testCrearInvirtiendoOrden() {
+
+        Arreglo cut = new Arreglo();
+        int[] origenParaLaPrueba = new int[] {3, 6, -1, 0, 7} ;
+        
+        int[] resultadoDeLaPrueba = cut.crearInvirtiendoOrden(origenParaLaPrueba);
+        assertArrayEquals(new int[]{7, 0, -1, 6, 3}, resultadoDeLaPrueba);
     }
 }
