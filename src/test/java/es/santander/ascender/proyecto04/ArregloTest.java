@@ -20,8 +20,6 @@ public class ArregloTest {
         for (int i = 0 ; i < TAMANO_REQUERIDO; i++) {
             assertEquals(i, resultado[i]);
         }
-
-        
     }
 
     @Test
@@ -32,5 +30,18 @@ public class ArregloTest {
         
         int[] resultadoDeLaPrueba = cut.crearInvirtiendoOrden(origenParaLaPrueba);
         assertArrayEquals(new int[]{7, 0, -1, 6, 3}, resultadoDeLaPrueba);
+    }
+
+
+    @Test
+    public void testDevolverValorEnIndice() throws Exception {
+        Arreglo cut = new Arreglo();
+
+        
+
+        float resultado = cut.devolverValorEnIndice(new float[] {4.6f, 3.2F, -34.7f, 0.0f}, 1);
+
+        assertEquals(3.2f, resultado);
+
     }
 }
