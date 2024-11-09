@@ -44,4 +44,24 @@ public class ArregloTest {
         assertEquals(3.2f, resultado);
 
     }
+
+    @Test
+    public void testSumarValores(){
+
+        // creo el objeto
+        Arreglo cut = new Arreglo();
+        
+        double[] valoresSinDecimales = {1.0, 2.0, 3.0};
+        assertEquals(6.0, cut.sumarValores(valoresSinDecimales));
+
+        double[] valoresConDecimales = {-1.5, 4.5, 2.0};
+        assertEquals(5.0, cut.sumarValores(valoresConDecimales));
+
+        double[] valoresVacios = {};
+        assertEquals(0.0, cut.sumarValores(valoresVacios)); 
+   
+
+      
+
+    }
 }
