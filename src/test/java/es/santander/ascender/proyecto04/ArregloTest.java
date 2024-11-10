@@ -3,6 +3,7 @@ package es.santander.ascender.proyecto04;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -58,10 +59,25 @@ public class ArregloTest {
         assertEquals(5.0, cut.sumarValores(valoresConDecimales));
 
         double[] valoresVacios = {};
-        assertEquals(0.0, cut.sumarValores(valoresVacios)); 
-   
+        assertEquals(0.0, cut.sumarValores(valoresVacios));      
 
-      
+    }
+
+    @Test
+    public void testCalcularMediaValores() throws Exception{
+
+        // creo el objeto
+        Arreglo cut = new Arreglo();
+     
+        double[] valoresMediaSinDecimales = {5.0, 10.0, 15.0};
+        assertEquals(10.0, cut.calcularMediaValores(valoresMediaSinDecimales));
+
+
+        double[] valoresMediaConDecimales = {-5.5, 10.5, 20.3, 4.7};
+        assertEquals(7.5, cut.calcularMediaValores(valoresMediaConDecimales));
+
+        double[]valoresMediaVacios = {};
+         assertThrows(Exception.class, () -> cut.calcularMediaValores(valoresMediaVacios));
 
     }
 }

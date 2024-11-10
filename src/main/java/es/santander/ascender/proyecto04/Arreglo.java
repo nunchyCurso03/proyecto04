@@ -57,9 +57,15 @@ public class Arreglo {
         return suma;
     }
 
-    public double calcularMediaValores(double[] valores) {
+    public double calcularMediaValores(double[] valores) throws Exception {
         double suma = sumarValores(valores);
 
+
+        if(valores.length == 0){
+            throw new Exception("El array está vacío o es nulo.");
+        }
         return suma/valores.length;
+
+        
     }
 }
